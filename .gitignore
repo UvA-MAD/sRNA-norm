@@ -12,4 +12,7 @@
 .Rproj.user
 *.Rproj
 
-spikes/*
+# pipeline stuff
+counts/*
+.snakemake
+norm/*
