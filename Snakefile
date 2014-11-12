@@ -26,6 +26,3 @@ rule make_results_dir:
     output: NORM_DIR
     shell: "mkdir -p {NORM_DIR}" 
 
-
-
-
