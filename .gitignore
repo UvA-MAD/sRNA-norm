@@ -3,16 +3,16 @@
 
 # Example code in package build process
 *-Ex.R
-
 # R data files from past sessions
 .Rdata
-
 # RStudio files
 .Rproj.user/
 .Rproj.user
 *.Rproj
-
-# pipeline stuff
+# pipeline
 counts/*
 .snakemake
 norm/*
+# packrat
+packrat/lib*/
+packrat/src/
