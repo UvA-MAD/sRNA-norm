@@ -1,6 +1,10 @@
 import os
 from snakemake.utils import R
 
+# packrat
+PACKRAT_SRC = "/zfs/datastore0/software/packrat_snapshots/sRNA-norm/src"
+
+
 COUNTS_DIR = "./counts/"
 NORM_DIR = "./norm/"
 SPIKE_COUNTS = "CountTable_spike.txt"
@@ -17,6 +21,7 @@ rule normalize_counts:
     input: dir=NORM_DIR,
            counts=COUNTS_DIR + "CountTable_{species}.txt"
     output: NORM_DIR + "CountTable_{species}.txt"
+    message: "normalizing counts"
     run: R("""
             library(faradr);
             normalize_counts("{SPIKE_PATH}", "{input.counts}", "{output}")
@@ -25,4 +30,9 @@ rule normalize_counts:
 rule make_results_dir:
     output: NORM_DIR
     shell: "mkdir -p {NORM_DIR}" 
+
+rule setup_packrat:
+    output: "./packrat/src"
+    message: "copying packrat source files"
+    shell: "cp -R {PACKRAT_SRC} {output}"
 
