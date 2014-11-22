@@ -111,8 +111,8 @@ Requires: BiocGenerics, GenomeInfoDb, IRanges, S4Vectors, XVector
 
 Package: Hmisc
 Source: CRAN
-Version: 3.14-5
-Hash: d5f94e52a736d120b77f82db6c399bba
+Version: 3.14-6
+Hash: 2ae3bfdbca26018d63c2832b3cc0d508
 Requires: Formula, acepack, latticeExtra
 
 Package: IRanges
